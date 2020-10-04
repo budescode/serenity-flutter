@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'landingpage.dart';
 import 'dashboard.dart';
 // import 'bottomnav.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+import 'screens/courses/providers/course_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,11 +41,18 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Serenity',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'product-sans'),
-      home: widget.widget,
+    return MultiProvider(
+          providers: [
+        ChangeNotifierProvider(create: (context) => CourseProvider()),
+
+       
+      ],
+          child: MaterialApp(
+        title: 'Serenity',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(fontFamily: 'product-sans'),
+        home: widget.widget,
+      ),
     );
   }
 }

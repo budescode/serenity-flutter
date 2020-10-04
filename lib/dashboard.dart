@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screens/courses/courses.dart';
+
 class Home extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -100,20 +102,29 @@ class Home extends StatelessWidget {
                     new Row(children: <Widget>[
                       SizedBox(width: 10),
                       new Expanded(
-                          child: new Container(
+                          child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                          builder: (context) => CoursesPage(),
+                          ));
+                        },
+                        child: new Container(
                         height: 45,
                         decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: new BorderRadius.circular(7.0)),
+                              color: Colors.black,
+                              borderRadius: new BorderRadius.circular(7.0)),
                         alignment: Alignment.center,
                         child: new Text('Resume Lesson',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: "product-sans",
-                                color: Colors.white)),
-                      )),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: "product-sans",
+                                  color: Colors.white)),
+                      ),
+                          )),
                       new Expanded(
                         child: new Container(),
                       )
@@ -138,13 +149,13 @@ class Home extends StatelessWidget {
                         SizedBox(width: 10),
                         new Expanded(
                           child: new Text(
-                            'Overall progress',
+                            'Take Test',
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
                         new Expanded(
                           child: new Text(
-                            '40%',
+                            '',
                             textAlign: TextAlign.right,
                             style: TextStyle(color: Colors.white),
                           ),
@@ -185,7 +196,7 @@ class Home extends StatelessWidget {
                         new SizedBox(
                           height: 15,
                         ),
-                        new Text('Lesson Completed'),
+                        new Text('Saved Offline'),
                         new SizedBox(
                           height: 91,
                         ),
@@ -202,10 +213,10 @@ class Home extends StatelessWidget {
                                   child: new Container(
                                 height: 20,
                                 width: 20,
-                                child: new Image(
-                                  // height: 50,
-                                  image: AssetImage('images/grey.png'),
-                                ),
+                                // child: new Image(
+                                //   // height: 50,
+                                //   image: AssetImage('images/grey.png'),
+                                // ),
                               )),
                             ],
                           ),
@@ -245,10 +256,10 @@ class Home extends StatelessWidget {
                                   child: new Container(
                                 height: 20,
                                 width: 20,
-                                child: new Image(
-                                  // height: 50,
-                                  image: AssetImage('images/grey.png'),
-                                ),
+                                // child: new Image(
+                                //   // height: 50,
+                                //   image: AssetImage('images/grey.png'),
+                                // ),
                               )),
                             ],
                           ),

@@ -75,7 +75,7 @@ class Home extends StatelessWidget {
                   child: new GestureDetector(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(
-                        builder: (context) => LoginPage(), )
+                        builder: (context) => Login(), )
                         );
                     },
                     child: new Container(
