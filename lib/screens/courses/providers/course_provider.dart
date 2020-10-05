@@ -16,7 +16,8 @@ class CourseProvider with ChangeNotifier {
 
   void onRefresh() async{
     // monitor network fetch
-    await Future.delayed(Duration(milliseconds: 1000));
+    // await Future.delayed(Duration(milliseconds: 1000));
+    await getData();
     // if failed,use refreshFailed()
     refreshController.refreshCompleted();
   }

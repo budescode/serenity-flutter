@@ -30,7 +30,9 @@ dependencies:
   cupertino_icons: ^0.1.2
   provider: ^4.3.2+2
   pull_to_refresh: ^1.6.1
-  fancy_on_boarding: ^1.6.0
+  introduction_screen: ^1.0.9
+  # fancy_on_boarding: ^1.6.0
+  # flutter_svg: ^0.17.4
 
 
 dev_dependencies:
@@ -57,6 +59,10 @@ flutter:
    - images/round.png
    - images/rena.png
    - images/list.png
+   - images/teacher.png
+   - images/user.png
+   - images/exam.jpg
+   - images/offline.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

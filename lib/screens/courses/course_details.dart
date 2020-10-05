@@ -37,12 +37,37 @@ class CourseDetailsPage extends StatelessWidget {
           //   ],
           // ),
           title: Text('Course Details'),
-          backgroundColor: Color.fromRGBO(26, 159, 202, 1.0),
+          backgroundColor: Colors.black,
         ),
         body: courseProvider.loading ?  Center(child: CircularProgressIndicator()) :
-        ListView(children:<Widget>[
-          Text(details.title)
-        ])
+        Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: ListView(children:<Widget>[
+                                  Image(
+                        height: 250,
+                        image: AssetImage('images/teacher.png'),
+                      ),
+            Card(child: Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(details.title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
+                  Text('( ${details.titletranslate} )'),
+                  Divider(),
+                  Text('WORD :',  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                  SizedBox(height: 5),
+                  Text('${details.word}'),
+                  Divider(),
+                  Text('Meaning :',  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                  SizedBox(height: 5),
+                  Text('${details.meaning}'),
+                ],
+              ),
+            ))
+          ]),
+        )
       );
     
   }

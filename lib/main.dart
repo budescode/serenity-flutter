@@ -1,13 +1,16 @@
+import 'package:Ecomme/screens/Home/provider/home_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'landingpage.dart';
-import 'dashboard.dart';
+
 // import 'bottomnav.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'screens/bottomnavbar/bottomnavbar.dart';
 import 'screens/courses/providers/course_provider.dart';
+import 'screens/onboard/onboard.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,6 +47,7 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
           providers: [
         ChangeNotifierProvider(create: (context) => CourseProvider()),
+        ChangeNotifierProvider(create: (context) => HomeProvider()),
 
        
       ],
@@ -60,7 +64,7 @@ Future<Widget> decideFirstWidget() async {
  SharedPreferences prefs = await SharedPreferences.getInstance();
   var token = prefs.getString('token');
   if (token == null || token == 'null'){ 
-    return LandingPage();
+    return OnBoardingPage();
   }else{
-  return Home();}
+  return BottomNav();}
 }

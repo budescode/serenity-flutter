@@ -29,17 +29,17 @@ class CoursesPage extends StatelessWidget {
                 text: 'Beginner',
               ),
               Tab(
-                icon: Icon(Icons.help),
+                icon: Icon(Icons.explore),
                 text: 'Intermediate',
               ),
               Tab(
-                icon: Icon(Icons.help),
+                icon: Icon(Icons.battery_charging_full),
                 text: 'Advanced',
               ),
             ],
           ),
           title: Text('Courses'),
-          backgroundColor: Color.fromRGBO(26, 159, 202, 1.0),
+          backgroundColor: Colors.black,
         ),
         body: courseProvider.loading
             ? Center(child: CircularProgressIndicator())

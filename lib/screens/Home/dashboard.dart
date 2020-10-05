@@ -1,25 +1,16 @@
+import 'package:Ecomme/screens/Home/provider/home_provider.dart';
+import 'package:Ecomme/screens/courses/courses.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'screens/courses/courses.dart';
 
 class Home extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    HomeProvider homeProvider = Provider.of<HomeProvider>(context);
     return new Scaffold(
-        bottomNavigationBar: new BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            fixedColor: Colors.black,
-            items: [
-              new BottomNavigationBarItem(
-                  title: new Text('Home'), icon: new Icon(Icons.home)),
-              new BottomNavigationBarItem(
-                  title: new Text('Proficiency'), icon: new Icon(Icons.list)),
-              new BottomNavigationBarItem(
-                  title: new Text('Settings'), icon: new Icon(Icons.settings)),
-              // new BottomNavigationBarItem(
-              //     title: new Text('Inquiries'), icon: new Icon(Icons.message)),
-            ]),
+
         appBar: AppBar(
             title: Text(''),
             backgroundColor: Colors.transparent,
@@ -35,19 +26,19 @@ class Home extends StatelessWidget {
                 children: <Widget>[
                   new Expanded(
                       child: new Text(
-                    'Welcome, Rena',
+                    'Welcome, ${homeProvider.name}',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        fontFamily: "product-sans"),
+                       ),
                   )),
                   new Expanded(
                       child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
-                      new Image(
+                      Image(
                         height: 50,
-                        image: AssetImage('images/round.png'),
+                        image: AssetImage('images/user.png'),
                       ),
                     ],
                   )),
@@ -80,7 +71,7 @@ class Home extends StatelessWidget {
                     new Row(children: <Widget>[
                       SizedBox(width: 10),
                       new Expanded(
-                        child: new Text('Beginner',
+                        child: new Text('Courses',
                             style: TextStyle(
                                 fontSize: 17,
                                 fontWeight: FontWeight.bold,
@@ -273,19 +264,4 @@ class Home extends StatelessWidget {
   }
 }
 
-class MyCard extends StatelessWidget {
-  MyCard({this.title, this.icon});
-  final Widget title;
-  final Widget icon;
 
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return new Container(
-        child: new Card(
-      child: new Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[this.title, this.icon]),
-    ));
-  }
-}

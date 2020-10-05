@@ -1,6 +1,5 @@
 import 'dart:convert';
-
-import 'package:Ecomme/home.dart';
+import 'package:Ecomme/screens/bottomnavbar/bottomnavbar.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -10,9 +9,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'resetpassword.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'register.dart';
-import 'dashboard.dart';
 
 
+//Color.fromRGBO(197, 37, 107, 1.0)
 
 
 class Login extends StatefulWidget {
@@ -74,7 +73,7 @@ _makePostRequest() async {
       Navigator.push(
         context,
         MaterialPageRoute(
-        builder: (context) => Home(),
+        builder: (context) => BottomNav(),
         ));
    }
      setState(() {
@@ -98,7 +97,7 @@ _makePostRequest() async {
             backgroundColor: Colors.transparent,
             elevation: 0.0,
             iconTheme: new IconThemeData(
-              color: Color.fromRGBO(197, 37, 107, 1.0),
+              color: Colors.black,
             ),
           ),
           body: Center(
@@ -114,7 +113,7 @@ _makePostRequest() async {
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
-                              color: Color.fromRGBO(197, 37, 107, 1.0),
+                              color: Colors.black,
                             ),
                           ),
                         ),
@@ -135,7 +134,7 @@ _makePostRequest() async {
                               border: OutlineInputBorder(),
                               labelText: "Email",
                               prefixIcon: Icon(Icons.email,
-                                  color: Color.fromRGBO(197, 37, 107, 1.0)),
+                                  color: Colors.black),
                               labelStyle: TextStyle(fontSize: 15)),
                         ),
                         SizedBox(height: 20),
@@ -149,7 +148,7 @@ _makePostRequest() async {
                               border: OutlineInputBorder(),
                               labelText: "Password",
                               prefixIcon: Icon(Icons.lock,
-                                  color: Color.fromRGBO(197, 37, 107, 1.0)),
+                                  color: Colors.black),
                               labelStyle: TextStyle(fontSize: 15)),
                         ),
                         SizedBox(height: 20),
@@ -170,7 +169,7 @@ _makePostRequest() async {
                                             ));
                                       },
                                     style: TextStyle(
-                                      color: Color.fromRGBO(197, 37, 107, 1.0),
+                                      color: Colors.black,
                                     )),
                               ]),
                             ),
@@ -178,7 +177,7 @@ _makePostRequest() async {
                         ),
                         SizedBox(height: 20),
                         loading ? 
-                        Center(child: CircularProgressIndicator(backgroundColor: Color.fromRGBO(197, 37, 107, 1.0),))
+                        Center(child: CircularProgressIndicator(backgroundColor: Colors.black,))
                         : MaterialButton(
                           onPressed: () {
                             password = _passwordController.text;
@@ -188,7 +187,7 @@ _makePostRequest() async {
                           child: Text(loading1,
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.bold)),
-                          color: Color.fromRGBO(197, 37, 107, 1.0),
+                          color: Colors.black,
                           elevation: 0,
                           minWidth: 400,
                           height: 50,
@@ -217,7 +216,7 @@ _makePostRequest() async {
                                         ));
                                   },
                                 style: TextStyle(
-                                    color: Color.fromRGBO(197, 37, 107, 1.0),
+                                    color: Colors.black,
                                     fontSize: 15)),
                           ]),
                         ))
